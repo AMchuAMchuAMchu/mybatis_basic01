@@ -1,3 +1,5 @@
+package com.itheima.pojo;
+
 import lombok.Data;
 
 /**
@@ -13,7 +15,7 @@ public class AnimeInfo {
 
     private String name;
 
-    private Integer releaseTime;
+    private Integer release_time;
 
     private String character01;
 
