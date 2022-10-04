@@ -16,7 +16,7 @@
 <!--    <select id="selectById" resultType="com.itheima.pojo.AnimeInfo">-->
 <!--        select-->
 <!--         <include refid="AnimeInfo_column"></include>-->
-<!--         from anime_info where id = #{id}-->
+<!--         from anime_info where id = ${id}-->
 <!--    </select>-->
 
     <resultMap id="anime" type="animeInfo">
@@ -27,6 +27,6 @@
         select * from anime_info
     </select>
     <select id="selectById" resultMap="anime">
-        select * from anime_info where id = ${id}
+        select * from anime_info where id = ${id};
     </select>
 </mapper>
