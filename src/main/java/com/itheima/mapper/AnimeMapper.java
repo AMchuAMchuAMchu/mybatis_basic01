@@ -16,4 +16,6 @@ public interface AnimeMapper {
 
     List<AnimeInfo> selectAnimeInfo();
 
+    AnimeInfo selectById(Integer id);
+
 }

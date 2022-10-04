@@ -6,4 +6,7 @@
     <select id="selectAnimeInfo" resultType="com.itheima.pojo.AnimeInfo">
         select * from anime_info
     </select>
+    <select id="selectById" resultType="com.itheima.pojo.AnimeInfo">
+        select * from anime_info where id = #{id}
+    </select>
 </mapper>

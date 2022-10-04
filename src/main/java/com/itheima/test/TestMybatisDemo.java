@@ -6,6 +6,7 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -21,7 +22,26 @@ import java.util.List;
  */
 public class TestMybatisDemo {
 
-    public static void main(String[] args) throws IOException {
+     @Test
+     public void testSelectById() throws IOException {
+
+         InputStream ras = Resources.getResourceAsStream("mybatis-config.xml");
+
+         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(ras);
+
+         SqlSession sqlSession = sqlSessionFactory.openSession();
+
+         AnimeMapper mapper = sqlSession.getMapper(AnimeMapper.class);
+
+         AnimeInfo animeInfo = mapper.selectById(1);
+
+         System.out.println(">>"+animeInfo);
+
+
+     }
+
+     @Test
+     public void testSelectAnimeInfo() throws IOException {
 
         String resource = "mybatis-config.xml";
         InputStream inputStream = Resources.getResourceAsStream(resource);
