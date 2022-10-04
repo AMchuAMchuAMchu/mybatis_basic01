@@ -27,6 +27,6 @@
         select * from anime_info
     </select>
     <select id="selectById" resultMap="anime">
-        select * from anime_info where id = ${id};
+        select * from anime_info where id = ${id}
     </select>
 </mapper>
