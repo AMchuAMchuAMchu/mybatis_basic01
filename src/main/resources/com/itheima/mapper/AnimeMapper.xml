@@ -19,14 +19,14 @@
 <!--         from anime_info where id = #{id}-->
 <!--    </select>-->
 
-    <resultMap id="id" type="animeInfo">
+    <resultMap id="anime" type="animeInfo">
         <result column="release_time" property="releaseTime"></result>
     </resultMap>
 
-    <select id="selectAnimeInfo" resultMap="id">
+    <select id="selectAnimeInfo" resultMap="anime">
         select * from anime_info
     </select>
-    <select id="selectById" resultMap="id">
-        select * from anime_info where id = #{id}
+    <select id="selectById" resultMap="anime">
+        select * from anime_info where id = ${id}
     </select>
 </mapper>

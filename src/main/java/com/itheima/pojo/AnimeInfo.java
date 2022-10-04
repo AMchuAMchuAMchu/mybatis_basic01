@@ -23,6 +23,4 @@ public class AnimeInfo {
 
     private Integer id;
 
-
-
 }
