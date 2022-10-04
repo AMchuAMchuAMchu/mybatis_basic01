@@ -3,10 +3,30 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.itheima.mapper.AnimeMapper">
-    <select id="selectAnimeInfo" resultType="AnimeInfo">
+
+<!--    <sql id="AnimeInfo_column">-->
+<!--        name,release_time releaseTime,character01,character02,id-->
+<!--    </sql>-->
+
+<!--    <select id="selectAnimeInfo" resultType="AnimeInfo">-->
+<!--        select-->
+<!--         <include refid="AnimeInfo_column"></include>-->
+<!--         from anime_info-->
+<!--    </select>-->
+<!--    <select id="selectById" resultType="com.itheima.pojo.AnimeInfo">-->
+<!--        select-->
+<!--         <include refid="AnimeInfo_column"></include>-->
+<!--         from anime_info where id = #{id}-->
+<!--    </select>-->
+
+    <resultMap id="id" type="animeInfo">
+        <result column="release_time" property="releaseTime"></result>
+    </resultMap>
+
+    <select id="selectAnimeInfo" resultMap="id">
         select * from anime_info
     </select>
-    <select id="selectById" resultType="com.itheima.pojo.AnimeInfo">
+    <select id="selectById" resultMap="id">
         select * from anime_info where id = #{id}
     </select>
 </mapper>
