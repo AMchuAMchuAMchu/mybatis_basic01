@@ -22,6 +22,23 @@ import java.util.List;
  */
 public class TestMybatisDemo {
 
+    @Test
+    public void testSelectByIdLG() throws IOException {
+
+        InputStream ras = Resources.getResourceAsStream("mybatis-config.xml");
+
+        SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(ras);
+
+        SqlSession sqlSession = sessionFactory.openSession();
+
+        AnimeMapper mapper = sqlSession.getMapper(AnimeMapper.class);
+
+        List<AnimeInfo> animeInfos = mapper.selectByIdLG(5);
+
+        animeInfos.forEach(System.out::println);
+
+    }
+
      @Test
      public void testSelectById() throws IOException {
 

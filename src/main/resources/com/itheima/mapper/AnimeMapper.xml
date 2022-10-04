@@ -27,6 +27,9 @@
         select * from anime_info
     </select>
     <select id="selectById" resultMap="anime">
-        select * from anime_info where id = ${id}
+        select * from anime_info where id = ${_parameter}
+    </select>
+    <select id="selectByIdLG" resultMap="anime">
+        select * from anime_info where id > ${_parameter}
     </select>
 </mapper>
