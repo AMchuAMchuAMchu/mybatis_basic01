@@ -40,6 +40,8 @@ public class TestMybatisDemo {
          System.out.println();
          System.out.println(">>"+animeInfo);
 
+         sqlSession.close();
+
 
      }
 
@@ -54,6 +56,9 @@ public class TestMybatisDemo {
 //        List<AnimeInfo> animeInfoList = sqlSession.selectList("animeInfo.selectAnimeInfo");
         AnimeMapper mapper = sqlSession.getMapper(AnimeMapper.class);
         List<AnimeInfo> animeInfos = mapper.selectAnimeInfo();
+         System.out.println();
+         System.out.println();
+         System.out.println();
 
         animeInfos.forEach(System.out::println);
 
