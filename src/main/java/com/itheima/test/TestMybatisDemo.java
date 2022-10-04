@@ -33,7 +33,7 @@ public class TestMybatisDemo {
 
          AnimeMapper mapper = sqlSession.getMapper(AnimeMapper.class);
 
-         AnimeInfo animeInfo = mapper.selectById(1);
+         AnimeInfo animeInfo = mapper.selectById(5);
 
          System.out.println(">>"+animeInfo);
 

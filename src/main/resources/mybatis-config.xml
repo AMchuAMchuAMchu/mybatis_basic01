@@ -15,6 +15,7 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="com/itheima/mapper/AnimeMapper.xml"/>
+<!--        <mapper resource="com/itheima/mapper/AnimeMapper.xml"/>-->
+        <package name="com/itheima"/>
     </mappers>
 </configuration>
