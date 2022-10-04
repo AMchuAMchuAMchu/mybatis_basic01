@@ -30,6 +30,8 @@
         select * from anime_info where id = ${_parameter}
     </select>
     <select id="selectByIdLG" resultMap="anime">
-        select * from anime_info where id > ${_parameter}
+        select * from anime_info where id <![CDATA[
+        <
+        ]]> ${_parameter}
     </select>
 </mapper>

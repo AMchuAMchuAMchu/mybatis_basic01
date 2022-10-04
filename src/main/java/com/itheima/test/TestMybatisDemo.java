@@ -34,6 +34,9 @@ public class TestMybatisDemo {
         AnimeMapper mapper = sqlSession.getMapper(AnimeMapper.class);
 
         List<AnimeInfo> animeInfos = mapper.selectByIdLG(5);
+        System.out.println();
+        System.out.println();
+        System.out.println();
 
         animeInfos.forEach(System.out::println);
 
