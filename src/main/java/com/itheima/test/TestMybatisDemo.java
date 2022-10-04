@@ -1,5 +1,6 @@
 package com.itheima.test;
 
+import com.itheima.mapper.AnimeMapper;
 import com.itheima.pojo.AnimeInfo;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -27,9 +28,13 @@ public class TestMybatisDemo {
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         SqlSession sqlSession = sqlSessionFactory.openSession();
 
-        List<AnimeInfo> animeInfoList = sqlSession.selectList("animeInfo.selectAnimeInfo");
+//        List<AnimeInfo> animeInfoList = sqlSession.selectList("animeInfo.selectAnimeInfo");
+        AnimeMapper mapper = sqlSession.getMapper(AnimeMapper.class);
+        List<AnimeInfo> animeInfos = mapper.selectAnimeInfo();
 
-        animeInfoList.forEach(System.out::println);
+        animeInfos.forEach(System.out::println);
+
+        sqlSession.close();
 
     }
 
