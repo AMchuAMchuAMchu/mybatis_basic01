@@ -35,6 +35,9 @@ public class TestMybatisDemo {
 
          AnimeInfo animeInfo = mapper.selectById(5);
 
+         System.out.println();
+         System.out.println();
+         System.out.println();
          System.out.println(">>"+animeInfo);
 
 
