@@ -23,4 +23,6 @@ public interface AnimeMapper {
 
     List<AnimeInfo> selectByConditions(@Param("name") String name,@Param("releaseTime")Integer releaseTime);
 
+    List<AnimeInfo> selectByConditions02(AnimeInfo animeInfo);
+
 }

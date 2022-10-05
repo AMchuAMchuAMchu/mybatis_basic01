@@ -36,7 +36,12 @@
     </select>
     <select id="selectByConditions" resultMap="anime">
         select * from anime_info
-        where name = #{name}
+        where name like #{name}
         and release_time = #{releaseTime}
+    </select>
+    <select id="selectByConditions02" resultMap="anime">
+        select * from anime_info
+        where name like #{name}
+          and release_time = #{releaseTime}
     </select>
 </mapper>

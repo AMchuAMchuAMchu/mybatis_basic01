@@ -48,9 +48,37 @@ public class TestMybatisDemo {
 
 
     @Test
+    public void testselectByConditions02(){
+
+        AnimeInfo animeInfo = new AnimeInfo();
+        animeInfo.setName("%"+"L"+"%");
+        animeInfo.setReleaseTime(2022);
+
+        List<AnimeInfo> animeInfos = animeMapper.selectByConditions02(animeInfo);
+        System.out.println();
+        System.out.println();
+        System.out.println();
+
+        animeInfos.forEach(System.out::println);
+
+
+    }
+
+
+    @Test
     public void selectByConditions(){
 
-        List<AnimeInfo> animeInfos = animeMapper.selectByConditions("Lycoris Recoil", 2022);
+        String _name = "";
+
+        String name = "%"+_name+"%";
+
+        Integer releaseTime = 2022;
+
+        List<AnimeInfo> animeInfos = animeMapper.selectByConditions(name, releaseTime);
+
+        System.out.println();
+        System.out.println();
+        System.out.println();
 
         animeInfos.forEach(System.out::println);
 
