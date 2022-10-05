@@ -48,11 +48,35 @@ public class TestMybatisDemo {
     }
 
 
+
+    @Test
+    public void testselectAllByConOne(){
+
+        AnimeInfo animeInfo = new AnimeInfo();
+
+        animeInfo.setReleaseTime(2022);
+        List<AnimeInfo> animeInfos = animeMapper.selectAllByConOne(animeInfo);
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        animeInfos.forEach(System.out::println);
+
+    }
+
+
+
+
+
+
+
+
+
     @Test
     public void testselectByConditions03(){
 
         HashMap<String, String> animeMap = new HashMap<>();
-        animeMap.put("name","%L%");
+        String _name = "";
+        animeMap.put("name","%"+_name+"%");
         animeMap.put("releaseTime","2022");
 
 
@@ -72,7 +96,7 @@ public class TestMybatisDemo {
     public void testselectByConditions02(){
 
         AnimeInfo animeInfo = new AnimeInfo();
-        animeInfo.setName("%"+"L"+"%");
+//        animeInfo.setName("%"+"L"+"%");
         animeInfo.setReleaseTime(2022);
 
         List<AnimeInfo> animeInfos = animeMapper.selectByConditions02(animeInfo);

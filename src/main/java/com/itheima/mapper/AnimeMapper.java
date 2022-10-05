@@ -28,4 +28,6 @@ public interface AnimeMapper {
 
     List<AnimeInfo> selectByConditions03(Map<String,String> map);
 
+    List<AnimeInfo> selectAllByConOne(AnimeInfo animeInfo);
+
 }

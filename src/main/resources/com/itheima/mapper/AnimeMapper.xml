@@ -4,49 +4,69 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.itheima.mapper.AnimeMapper">
 
-<!--    <sql id="AnimeInfo_column">-->
-<!--        name,release_time releaseTime,character01,character02,id-->
-<!--    </sql>-->
+    <!--    <sql id="AnimeInfo_column">-->
+    <!--        name,release_time releaseTime,character01,character02,id-->
+    <!--    </sql>-->
 
-<!--    <select id="selectAnimeInfo" resultType="AnimeInfo">-->
-<!--        select-->
-<!--         <include refid="AnimeInfo_column"></include>-->
-<!--         from anime_info-->
-<!--    </select>-->
-<!--    <select id="selectById" resultType="com.itheima.pojo.AnimeInfo">-->
-<!--        select-->
-<!--         <include refid="AnimeInfo_column"></include>-->
-<!--         from anime_info where id = ${id}-->
-<!--    </select>-->
+    <!--    <select id="selectAnimeInfo" resultType="AnimeInfo">-->
+    <!--        select-->
+    <!--         <include refid="AnimeInfo_column"></include>-->
+    <!--         from anime_info-->
+    <!--    </select>-->
+    <!--    <select id="selectById" resultType="com.itheima.pojo.AnimeInfo">-->
+    <!--        select-->
+    <!--         <include refid="AnimeInfo_column"></include>-->
+    <!--         from anime_info where id = ${id}-->
+    <!--    </select>-->
 
     <resultMap id="anime" type="animeInfo">
         <result column="release_time" property="releaseTime"></result>
     </resultMap>
 
     <select id="selectAnimeInfo" resultMap="anime">
-        select * from anime_info
+        select *
+        from anime_info
     </select>
     <select id="selectById" resultMap="anime">
-        select * from anime_info where id = ${_parameter}
+        select *
+        from anime_info
+        where id = ${_parameter}
     </select>
     <select id="selectByIdLG" resultMap="anime">
-        select * from anime_info where id <![CDATA[
+        select *
+        from anime_info
+        where id <![CDATA[
         <
         ]]> ${_parameter}
     </select>
     <select id="selectByConditions" resultMap="anime">
-        select * from anime_info
+        select *
+        from anime_info
         where name like #{name}
-        and release_time = #{releaseTime}
+          and release_time = #{releaseTime}
     </select>
     <select id="selectByConditions02" resultMap="anime">
-        select * from anime_info
+        select *
+        from anime_info
         where name like #{name}
           and release_time = #{releaseTime}
     </select>
     <select id="selectByConditions03" resultMap="anime">
-        select * from anime_info
+        select *
+        from anime_info
         where name like #{name}
           and release_time = #{releaseTime}
+    </select>
+    <select id="selectAllByConOne" resultMap="anime">
+        select *
+        from anime_info
+        <where>
+            <if test="name != null and name != '' ">
+                name like #{name}
+            </if>
+            <if test="releaseTime != null">
+                and release_time = #{releaseTime}
+            </if>
+        </where>
     </select>
 </mapper>
