@@ -30,4 +30,7 @@ public interface AnimeMapper {
 
     List<AnimeInfo> selectAllByConOne(AnimeInfo animeInfo);
 
+    void updateById(AnimeInfo animeInfo);
+
+
 }

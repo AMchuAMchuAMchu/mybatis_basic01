@@ -41,16 +41,30 @@ public class TestMybatisDemo {
 
         sqlSessionFactory = new SqlSessionFactoryBuilder().build(is);
 
-        sqlSession = sqlSessionFactory.openSession();
+        sqlSession = sqlSessionFactory.openSession(true);
 
         animeMapper = sqlSession.getMapper(AnimeMapper.class);
 
     }
 
 
+    @Test
+    public void testUpdateById(){
+
+        AnimeInfo animeInfo = new AnimeInfo();
+
+        animeInfo.setId(3);
+        animeInfo.setCharacter01("kirito桐人");
+        animeMapper.updateById(animeInfo);
+
+
+
+    }
+
+
 
     @Test
-    public void testselectAllByConOne(){
+    public void testSelectAllByConOne(){
 
         AnimeInfo animeInfo = new AnimeInfo();
 

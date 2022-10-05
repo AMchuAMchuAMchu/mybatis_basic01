@@ -22,6 +22,27 @@
     <resultMap id="anime" type="animeInfo">
         <result column="release_time" property="releaseTime"></result>
     </resultMap>
+    <update id="updateById">
+        update anime_info
+        <set>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="releaseTime != null">
+                release_time = #{releaseTime},
+            </if>
+            <if test="character01 != null">
+                character01 = #{character01},
+            </if>
+            <if test="character02 != null">
+                character02 = #{character02},
+            </if>
+            <if test="id != null">
+                id = #{id}
+            </if>
+            where id = #{id}
+        </set>
+    </update>
 
     <select id="selectAnimeInfo" resultMap="anime">
         select *
