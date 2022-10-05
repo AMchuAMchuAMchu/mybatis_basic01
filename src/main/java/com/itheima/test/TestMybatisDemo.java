@@ -22,6 +22,41 @@ import java.util.List;
  */
 public class TestMybatisDemo {
 
+    private static InputStream is;
+
+    private static SqlSessionFactory sqlSessionFactory;
+
+    private static SqlSession sqlSession;
+    private static AnimeMapper animeMapper;
+
+
+    static {
+
+        try {
+            is = Resources.getResourceAsStream("mybatis-config.xml");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        sqlSessionFactory = new SqlSessionFactoryBuilder().build(is);
+
+        sqlSession = sqlSessionFactory.openSession();
+
+        animeMapper = sqlSession.getMapper(AnimeMapper.class);
+
+    }
+
+
+    @Test
+    public void selectByConditions(){
+
+        List<AnimeInfo> animeInfos = animeMapper.selectByConditions("Lycoris Recoil", 2022);
+
+        animeInfos.forEach(System.out::println);
+
+
+    }
+
     @Test
     public void testSelectByIdLG() throws IOException {
 

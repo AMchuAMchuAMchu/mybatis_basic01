@@ -34,4 +34,9 @@
         <
         ]]> ${_parameter}
     </select>
+    <select id="selectByConditions" resultMap="anime">
+        select * from anime_info
+        where name = #{name}
+        and release_time = #{releaseTime}
+    </select>
 </mapper>

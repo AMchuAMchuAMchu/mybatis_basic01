@@ -1,6 +1,7 @@
 package com.itheima.mapper;
 
 import com.itheima.pojo.AnimeInfo;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -19,5 +20,7 @@ public interface AnimeMapper {
     AnimeInfo selectById(Integer id);
 
     List<AnimeInfo> selectByIdLG(Integer id);
+
+    List<AnimeInfo> selectByConditions(@Param("name") String name,@Param("releaseTime")Integer releaseTime);
 
 }
