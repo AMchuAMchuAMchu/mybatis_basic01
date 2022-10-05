@@ -4,6 +4,7 @@ import com.itheima.pojo.AnimeInfo;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Description ==> TODO
@@ -24,5 +25,7 @@ public interface AnimeMapper {
     List<AnimeInfo> selectByConditions(@Param("name") String name,@Param("releaseTime")Integer releaseTime);
 
     List<AnimeInfo> selectByConditions02(AnimeInfo animeInfo);
+
+    List<AnimeInfo> selectByConditions03(Map<String,String> map);
 
 }

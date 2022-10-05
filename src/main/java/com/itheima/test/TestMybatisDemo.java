@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -43,6 +44,26 @@ public class TestMybatisDemo {
         sqlSession = sqlSessionFactory.openSession();
 
         animeMapper = sqlSession.getMapper(AnimeMapper.class);
+
+    }
+
+
+    @Test
+    public void testselectByConditions03(){
+
+        HashMap<String, String> animeMap = new HashMap<>();
+        animeMap.put("name","%L%");
+        animeMap.put("releaseTime","2022");
+
+
+        List<AnimeInfo> animeInfos = animeMapper.selectByConditions03(animeMap);
+
+        System.out.println();
+        System.out.println();
+        System.out.println();
+
+        animeInfos.forEach(System.out::println);
+
 
     }
 

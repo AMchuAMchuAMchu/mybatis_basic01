@@ -44,4 +44,9 @@
         where name like #{name}
           and release_time = #{releaseTime}
     </select>
+    <select id="selectByConditions03" resultMap="anime">
+        select * from anime_info
+        where name like #{name}
+          and release_time = #{releaseTime}
+    </select>
 </mapper>
