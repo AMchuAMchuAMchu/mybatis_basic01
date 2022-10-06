@@ -43,6 +43,10 @@
             where id = #{id}
         </set>
     </update>
+    <delete id="deleteById">
+        delete from anime_info
+        where id = #{id}
+    </delete>
 
     <select id="selectAnimeInfo" resultMap="anime">
         select *

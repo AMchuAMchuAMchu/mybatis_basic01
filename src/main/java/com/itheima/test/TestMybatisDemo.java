@@ -49,6 +49,14 @@ public class TestMybatisDemo {
 
 
     @Test
+    void testDeleteById(){
+
+        animeMapper.deleteById(21);
+
+    }
+
+
+    @Test
     public void testUpdateById(){
 
         AnimeInfo animeInfo = new AnimeInfo();

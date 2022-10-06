@@ -32,5 +32,7 @@ public interface AnimeMapper {
 
     void updateById(AnimeInfo animeInfo);
 
+    void deleteById(@Param("id")Integer id);
+
 
 }
