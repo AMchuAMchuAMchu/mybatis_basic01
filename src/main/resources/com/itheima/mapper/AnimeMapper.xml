@@ -47,6 +47,13 @@
         delete from anime_info
         where id = #{id}
     </delete>
+    <delete id="deleteByIdMany">
+        delete from anime_info
+        where id in (<foreach collection="ids" item="id" separator=",">
+        #{id}
+    </foreach>
+        )
+    </delete>
 
     <select id="selectAnimeInfo" resultMap="anime">
         select *

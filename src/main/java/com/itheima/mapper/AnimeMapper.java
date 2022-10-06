@@ -2,6 +2,7 @@ package com.itheima.mapper;
 
 import com.itheima.pojo.AnimeInfo;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 import java.util.Map;
@@ -33,6 +34,12 @@ public interface AnimeMapper {
     void updateById(AnimeInfo animeInfo);
 
     void deleteById(@Param("id")Integer id);
+
+    void deleteByIdMany(@Param("ids")Integer [] ids);
+
+    @Select("select * from anime_info")
+    List<AnimeInfo> selectAllByAno();
+
 
 
 }

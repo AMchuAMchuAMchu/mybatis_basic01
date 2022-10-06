@@ -49,7 +49,24 @@ public class TestMybatisDemo {
 
 
     @Test
-    void testDeleteById(){
+    public void testSelectByAno(){
+
+        List<AnimeInfo> animeInfos = animeMapper.selectAllByAno();
+
+        animeInfos.forEach(System.out::println);
+
+    }
+
+    @Test
+    public void testDeleteByMany(){
+
+        animeMapper.deleteByIdMany(new Integer[]{21,22,23});
+
+    }
+
+
+    @Test
+    public void testDeleteById(){
 
         animeMapper.deleteById(21);
 
