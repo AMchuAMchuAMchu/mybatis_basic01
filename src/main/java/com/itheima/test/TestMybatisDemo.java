@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.Test;
 
+import javax.crypto.ExemptionMechanismException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
@@ -50,14 +51,30 @@ public class TestMybatisDemo {
 
 
     @Test
+    public void testInsertAnimeInfo(){
+
+        AnimeInfo animeInfo = new AnimeInfo();
+
+        animeInfo.setName("金装的维尔梅");
+        animeInfo.setReleaseTime(2022);
+        animeInfo.setCharacter01("维尔梅");
+        animeInfo.setCharacter02("阿鲁特");
+        animeInfo.setId(21);
+
+        animeMapper.updateAnimeInfoByAno(animeInfo);
+
+    }
+
+
+    @Test
     public void testInsertAnimeByAno(){
 
         AnimeInfo animeInfo = new AnimeInfo();
 
         animeInfo.setName("我的青春恋爱物语果然有问题");
+        animeInfo.setReleaseTime(2013);
         animeInfo.setCharacter01("雪乃");
         animeInfo.setCharacter02("比企谷");
-        animeInfo.setReleaseTime(2013);
         animeInfo.setId(21);
 
         animeMapper.insertAnimeByAno(animeInfo);

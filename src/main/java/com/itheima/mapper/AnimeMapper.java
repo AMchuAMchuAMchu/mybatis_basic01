@@ -4,6 +4,7 @@ import com.itheima.pojo.AnimeInfo;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 import java.util.Map;
@@ -41,9 +42,12 @@ public interface AnimeMapper {
     @Select("select * from anime_info")
     List<AnimeInfo> selectAllByAno();
 
-    @Insert("insert into anime_info values(#{name},#{character01},#{character02},#{releaseTime},#{id})")
+    @Insert("insert into anime_info values(#{name},#{releaseTime},#{character01},#{character02},#{id})")
     void insertAnimeByAno(AnimeInfo animeInfo);
 
+
+    @Update("update anime_info set name = #{name} and release_time = #{id} and character01 = #{character01} and character02 = #{character02} and id = #{id} where id = id = #{id}")
+    void updateAnimeInfoByAno(AnimeInfo animeInfo);
 
 
 }
