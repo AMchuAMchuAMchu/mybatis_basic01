@@ -48,6 +48,23 @@ public class TestMybatisDemo {
     }
 
 
+
+    @Test
+    public void testInsertAnimeByAno(){
+
+        AnimeInfo animeInfo = new AnimeInfo();
+
+        animeInfo.setName("我的青春恋爱物语果然有问题");
+        animeInfo.setCharacter01("雪乃");
+        animeInfo.setCharacter02("比企谷");
+        animeInfo.setReleaseTime(2013);
+        animeInfo.setId(21);
+
+        animeMapper.insertAnimeByAno(animeInfo);
+
+
+    }
+
     @Test
     public void testSelectByAno(){
 
