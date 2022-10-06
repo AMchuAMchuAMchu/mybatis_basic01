@@ -53,6 +53,10 @@ public class TestMybatisDemo {
 
         List<AnimeInfo> animeInfos = animeMapper.selectAllByAno();
 
+        System.out.println();
+        System.out.println();
+        System.out.println();
+
         animeInfos.forEach(System.out::println);
 
     }
