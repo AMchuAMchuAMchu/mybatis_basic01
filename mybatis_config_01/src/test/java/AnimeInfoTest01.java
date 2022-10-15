@@ -25,6 +25,27 @@ public class AnimeInfoTest01 {
    private IAnimeInfoService iAnimeInfoService;
 
    @Test
+   public void updateById(){
+      AnimeInfo animeInfo = new AnimeInfo();
+      animeInfo.setName("刀剑神域Alicization...小野学");
+      animeInfo.setRelease_time(2018);
+      animeInfo.setCharacter01("爱丽丝·辛赛西斯·萨提茅野爱衣");
+      animeInfo.setCharacter02("尤吉欧岛崎信长");
+      animeInfo.setId(27);
+
+      boolean b = iAnimeInfoService.updateById(animeInfo);
+
+      System.out.println();
+      System.out.println();
+      System.out.println();
+      System.out.println(">>>>>"+b);
+      System.out.println();
+      System.out.println();
+      System.out.println();
+
+   }
+
+   @Test
    public void selectAll(){
 
       List<AnimeInfo> animeInfos = iAnimeInfoService.selectAll();
