@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
@@ -23,6 +24,20 @@ public class AnimeInfoTest01 {
 
    @Autowired
    private IAnimeInfoService iAnimeInfoService;
+
+   @Test
+   public void testDeleteById(){
+
+      boolean b = iAnimeInfoService.deleteById(111);
+      System.out.println();
+      System.out.println();
+      System.out.println();
+      System.out.println(">>>>>"+b);
+      System.out.println();
+      System.out.println();
+      System.out.println();
+
+   }
 
    @Test
    public void updateById(){
