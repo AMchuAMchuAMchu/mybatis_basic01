@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.List;
+
 /**
  * Description ==> TODO
  * BelongsProject ==> mybatis_basic01
@@ -21,6 +23,15 @@ public class AnimeInfoTest01 {
 
    @Autowired
    private IAnimeInfoService iAnimeInfoService;
+
+   @Test
+   public void selectAll(){
+
+      List<AnimeInfo> animeInfos = iAnimeInfoService.selectAll();
+
+      animeInfos.forEach(System.out::println);
+
+   }
 
    @Test
    public void testSelectById(){
