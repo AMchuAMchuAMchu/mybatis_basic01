@@ -6,7 +6,11 @@
 
     <groupId>com.itheima</groupId>
     <artifactId>mybatis_basic01</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>mybatis_config_01</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

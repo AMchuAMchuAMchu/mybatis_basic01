@@ -46,7 +46,7 @@ public interface AnimeMapper {
     void insertAnimeByAno(AnimeInfo animeInfo);
 
 
-    @Update("update anime_info set name = #{name} and release_time = #{id} and character01 = #{character01} and character02 = #{character02} and id = #{id} where id = id = #{id}")
+    @Update("update anime_info set name = #{name},release_time = #{releaseTime} , character01 = #{character01} , character02 = #{character02} , id = #{id} where id = #{id}")
     void updateAnimeInfoByAno(AnimeInfo animeInfo);
 
 
